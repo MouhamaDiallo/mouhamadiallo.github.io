@@ -1,265 +1,146 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Diallo Mouhamad — Portfolio</title>
-
-  <style>
-    body{
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f3f4f6;
-      color: #111827;
-      line-height: 1.6;
-    }
-
-    header{
-      background: #111827;
-      color: #ffffff;
-      padding: 52px 18px;
-    }
-
-    .wrap{
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 18px;
-    }
-
-    h1{ margin: 0; font-size: 32px; }
-    h2{ margin: 0 0 12px 0; font-size: 20px; }
-    h3{ margin: 14px 0 6px 0; font-size: 15px; }
-
-    .topline{ opacity: 0.9; margin-top: 6px; }
-    .muted{ color: #6b7280; }
-
-    .btn{
-      display: inline-block;
-      background: #2563eb;
-      color: #ffffff;
-      padding: 10px 14px;
-      border-radius: 10px;
-      text-decoration: none;
-      margin-top: 14px;
-    }
-
-    .btn:hover{ opacity: 0.95; }
-
-    .card{
-      background: #ffffff;
-      border-radius: 14px;
-      padding: 18px;
-      margin: 18px 0;
-      box-shadow: 0 1px 10px rgba(0,0,0,0.06);
-    }
-
-    .item{
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      padding: 14px;
-      margin-top: 12px;
-    }
-
-    .grid{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    @media(max-width:760px){
-      .grid{ grid-template-columns: 1fr; }
-    }
-
-    .tags span{
-      display: inline-block;
-      background: #eef2ff;
-      border-radius: 999px;
-      padding: 6px 10px;
-      margin: 6px 6px 0 0;
-      font-size: 13px;
-    }
-
-    ul{ margin: 8px 0 0 18px; }
-    li{ margin: 6px 0; }
-
-    a{
-      color: #2563eb;
-      text-decoration: none;
-    }
-
-    a:hover{ text-decoration: underline; }
-
-    footer{
-      text-align: center;
-      color: #6b7280;
-      padding: 18px;
-    }
-
-    .sep{
-      height: 1px;
-      background: #e5e7eb;
-      margin: 16px 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Mouhamad Diallo | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f6fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background: #1e272e;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        section {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+        }
+        h2 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        .project {
+            margin-top: 25px;
+        }
+        .project img {
+            max-width: 100%;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
-  <div class="wrap">
-    <h1>Diallo Mouhamad</h1>
-    <div class="topline">
-      Master 1 MIAGE — Data & Informatique de gestion (Marseille)
-    </div>
-
-    <p style="max-width:850px;margin-top:14px;">
-      Étudiant en MIAGE développant une double compétence en analyse de données
-      et en systèmes d’information, avec une orientation Data / BI et
-      informatique de gestion.
-    </p>
-
-    <a class="btn" href="mailto:mouhamadiallo99@gmail.com">
-      Me contacter
-    </a>
-  </div>
+    <h1>Mouhamad Diallo</h1>
+    <p>M1 MIAGE | Data • Informatique • Analyse & Visualisation</p>
 </header>
 
-<div class="wrap">
-
-  <!-- DESCRIPTION -->
-  <section class="card">
-    <h2>Description</h2>
-    <p class="muted">
-      Profil orienté Data et systèmes d’information, avec une base solide en
-      analyse statistique (R, Excel), bases de données (SQL) et développement
-      (Java, Web). Intéressé par les projets concrets à impact décisionnel.
+<section>
+    <h2>Profil</h2>
+    <p>
+        Étudiant en Master MIAGE, je développe une double compétence en 
+        <strong>analyse de données</strong> et <strong>informatique</strong>.
+        Je m’intéresse particulièrement à la visualisation, à l’aide à la décision
+        et aux projets concrets orientés données.
     </p>
+</section>
 
-    <div class="tags">
-      <span>Data Analysis</span>
-      <span>Business Intelligence</span>
-      <span>SQL</span>
-      <span>R</span>
-      <span>Power BI</span>
-      <span>Web</span>
-    </div>
-  </section>
+<section>
+    <h2>Projets Data</h2>
 
-  <!-- COMPETENCES -->
-  <section class="card">
-    <h2>Compétences</h2>
+    <!-- PROJET CAN 2025 -->
+    <div class="project">
+        <h3>CAN 2025 (Maroc) — Projection analytique & Power BI</h3>
 
-    <div class="grid">
-      <div>
-        <h3>Data & Analyse</h3>
-        <div class="tags">
-          <span>R</span>
-          <span>Excel</span>
-          <span>Power BI</span>
-          <span>Statistiques</span>
-        </div>
-      </div>
+        <img src="https://mouhamadiallo.github.io/can-2025-powerbi-projection/images/prevision_can.png"
+             alt="Prévision CAN 2025 Power BI">
 
-      <div>
-        <h3>Informatique & Web</h3>
-        <div class="tags">
-          <span>SQL</span>
-          <span>Java</span>
-          <span>PHP</span>
-          <span>JavaScript</span>
-          <span>HTML / CSS</span>
-        </div>
-      </div>
-    </div>
-  </section>
+        <p>
+            Projet d’analyse et de projection des performances des sélections africaines
+            pour la <strong>CAN 2025 au Maroc</strong>.
+            J’ai conçu une base de données dédiée et construit un
+            <strong>score analytique</strong> intégrant :
+        </p>
+        <ul>
+            <li>historique des performances sur plusieurs CAN</li>
+            <li>classement FIFA</li>
+            <li>forme récente et dynamique</li>
+            <li>avantage du pays hôte</li>
+        </ul>
+        <p>
+            Les résultats sont présentés sous forme de <strong>tableau de bord Power BI</strong>
+            avec projections par pays et par zones géographiques.
+        </p>
 
-  <!-- PROJETS -->
-  <section class="card">
-    <h2>Projets</h2>
-
-    <div class="item">
-      <strong>Analyse des troubles électrocardiographiques chez les patients AVC</strong>
-      <p class="muted">
-        Projet réalisé au Centre Muraz (Burkina Faso). Analyse statistique de
-        données cliniques afin d’étudier les anomalies ECG chez des patients AVC.
-      </p>
-      <p>
-        📄 <a href="rapport_ecg_avc.pdf" target="_blank">
-          Télécharger le rapport (PDF)
+        <a class="btn"
+           href="https://github.com/MouhamaDiallo/can-2025-powerbi-projection"
+           target="_blank">
+            👉 Voir les détails (code, données, Power BI)
         </a>
-        &nbsp;|&nbsp;
-        🔗 <a href="https://github.com/MouhamaDiallo/analyse-ecg-avc" target="_blank">
-          Détails sur GitHub
+    </div>
+
+    <!-- PROJET AVC -->
+    <div class="project">
+        <h3>Analyse des troubles électrocardiographiques chez les patients AVC</h3>
+        <p>
+            Projet académique réalisé au Centre Muraz (Burkina Faso),
+            portant sur l’analyse statistique de données cliniques
+            afin d’étudier les anomalies ECG chez les patients victimes d’AVC.
+        </p>
+        <a class="btn" href="rapport_ecg_avc.pdf" target="_blank">
+            📄 Télécharger le rapport (PDF)
         </a>
-      </p>
     </div>
 
-    <div class="item">
-      <strong>Dashboard Power BI — Prédiction CAN</strong>
-      <p class="muted">
-        Analyse exploratoire et visualisation de données sportives avec Power BI.
-      </p>
-    </div>
+</section>
 
-    <div class="item">
-      <strong>Projet Web (SQL / PHP / JavaScript)</strong>
-      <p class="muted">
-        Application web développée en groupe avec base de données et backend SQL.
-      </p>
-    </div>
-  </section>
-
-  <!-- CERTIFICATS -->
-  <section class="card">
+<section>
     <h2>Certifications</h2>
-
-    <div class="item">
-      <strong>Artificial Intelligence Essentials V2 — IBM</strong>
-      <p class="muted">
-        Certification IBM validant les bases essentielles de l’intelligence
-        artificielle : concepts, usages, enjeux et impacts professionnels.
-      </p>
-      <p>
-        📄 <a href="certificats/certificat_ai_v2_ibm.pdf" target="_blank">
-          Télécharger le certificat (PDF)
-        </a>
-        &nbsp;|&nbsp;
-        🔗 <a href="https://www.credly.com/badges/dc332ffd-46cc-46a9-abf1-44a83e38717a" target="_blank">
-          Badge Credly
-        </a>
-      </p>
-    </div>
-
-    <div class="item">
-      <strong>Introduction to Artificial Intelligence (AI) — IBM (Coursera)</strong>
-      <p class="muted">
-        Formation d’introduction à l’IA couvrant les principes fondamentaux,
-        le machine learning et les applications concrètes.
-      </p>
-      <p>
-        📄 <a href="certificats/certificat_ai_intro_ibm.pdf" target="_blank">
-          Télécharger le certificat (PDF)
-        </a>
-        &nbsp;|&nbsp;
-        🔗 <a href="https://coursera.org/verify/BFXD73LKE3JF" target="_blank">
-          Vérification Coursera
-        </a>
-      </p>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="card">
-    <h2>Contact</h2>
-    <p>Email : <a href="mailto:mouhamadiallo99@gmail.com">mouhamadiallo99@gmail.com</a></p>
-    <p>GitHub : <a href="https://github.com/MouhamaDiallo" target="_blank">github.com/MouhamaDiallo</a></p>
-  </section>
-
-</div>
+    <ul>
+        <li>
+            Artificial Intelligence Essentials V2 — IBM  
+            <a href="certificats/certificat_ai_v2_ibm.pdf" target="_blank">📄 PDF</a>
+        </li>
+        <li>
+            Introduction to Artificial Intelligence (AI) — IBM  
+            <a href="certificats/certificat_ai_intro_ibm.pdf" target="_blank">📄 PDF</a>
+        </li>
+    </ul>
+</section>
 
 <footer>
-  © 2026 — Diallo Mouhamad
+    © 2026 — Mouhamad Diallo | Portfolio GitHub Pages
 </footer>
 
 </body>
-  </html>
+</html>
