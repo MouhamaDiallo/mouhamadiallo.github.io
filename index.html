@@ -4,43 +4,123 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Diallo Mouhamad — Portfolio</title>
+
   <style>
-    body{font-family:Arial,sans-serif;margin:0;background:#f3f4f6;color:#111827;line-height:1.6}
-    header{background:#111827;color:#fff;padding:52px 18px}
-    .wrap{max-width:980px;margin:0 auto;padding:18px}
-    .topline{opacity:.9;margin-top:6px}
-    .btn{display:inline-block;background:#2563eb;color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;margin-top:14px}
-    .btn:hover{opacity:.95}
+    body{
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f3f4f6;
+      color: #111827;
+      line-height: 1.6;
+    }
 
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    @media(max-width:760px){.grid{grid-template-columns:1fr}}
+    header{
+      background: #111827;
+      color: #ffffff;
+      padding: 52px 18px;
+    }
 
-    .card{background:#fff;border-radius:14px;padding:18px;margin:14px 0;box-shadow:0 1px 10px rgba(0,0,0,.06)}
-    h1{margin:0;font-size:32px}
-    h2{margin:0 0 12px 0;font-size:18px}
-    h3{margin:18px 0 8px 0;font-size:15px}
-    .muted{color:#6b7280}
-    ul{margin:8px 0 0 18px}
-    li{margin:6px 0}
-    .item{border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-top:10px}
-    a{color:#2563eb;text-decoration:none}
-    a:hover{text-decoration:underline}
-    footer{text-align:center;color:#6b7280;padding:18px}
-    .sep{height:1px;background:#e5e7eb;margin:18px 0}
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 18px;
+    }
+
+    h1{ margin: 0; font-size: 32px; }
+    h2{ margin: 0 0 12px 0; font-size: 20px; }
+    h3{ margin: 14px 0 6px 0; font-size: 15px; }
+
+    .topline{ opacity: 0.9; margin-top: 6px; }
+    .muted{ color: #6b7280; }
+
+    .btn{
+      display: inline-block;
+      background: #2563eb;
+      color: #ffffff;
+      padding: 10px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      margin-top: 14px;
+    }
+
+    .btn:hover{ opacity: 0.95; }
+
+    .card{
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 18px;
+      margin: 18px 0;
+      box-shadow: 0 1px 10px rgba(0,0,0,0.06);
+    }
+
+    .item{
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 14px;
+      margin-top: 12px;
+    }
+
+    .grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    @media(max-width:760px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .tags span{
+      display: inline-block;
+      background: #eef2ff;
+      border-radius: 999px;
+      padding: 6px 10px;
+      margin: 6px 6px 0 0;
+      font-size: 13px;
+    }
+
+    ul{ margin: 8px 0 0 18px; }
+    li{ margin: 6px 0; }
+
+    a{
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    a:hover{ text-decoration: underline; }
+
+    footer{
+      text-align: center;
+      color: #6b7280;
+      padding: 18px;
+    }
+
+    .sep{
+      height: 1px;
+      background: #e5e7eb;
+      margin: 16px 0;
+    }
   </style>
 </head>
+
 <body>
 
 <header>
   <div class="wrap">
     <h1>Diallo Mouhamad</h1>
-    <div class="topline">Master 1 MIAGE — Data, IA & Systèmes d’information</div>
-    <p style="max-width:850px;margin:14px 0 0 0;">
-      Profil orienté analyse de données, intelligence artificielle appliquée et systèmes
-      d’information. J’exploite les données pour appuyer la prise de décision et concevoir
-      des solutions informatiques utiles aux organisations.
+    <div class="topline">
+      Master 1 MIAGE — Data & Informatique de gestion (Marseille)
+    </div>
+
+    <p style="max-width:850px;margin-top:14px;">
+      Étudiant en MIAGE développant une double compétence en analyse de données
+      et en systèmes d’information, avec une orientation Data / BI et
+      informatique de gestion.
     </p>
-    <a class="btn" href="mailto:mouhamadiallo99@gmail.com">Me contacter</a>
+
+    <a class="btn" href="mailto:mouhamadiallo99@gmail.com">
+      Me contacter
+    </a>
   </div>
 </header>
 
@@ -48,121 +128,124 @@
 
   <!-- DESCRIPTION -->
   <section class="card">
-    <h2>À propos</h2>
+    <h2>Description</h2>
     <p class="muted">
-      Étudiant en MIAGE avec une approche data-driven, combinant analyse statistique,
-      intelligence artificielle appliquée et développement de systèmes d’information.
-      Intéressé par des projets à forte valeur décisionnelle.
+      Profil orienté Data et systèmes d’information, avec une base solide en
+      analyse statistique (R, Excel), bases de données (SQL) et développement
+      (Java, Web). Intéressé par les projets concrets à impact décisionnel.
     </p>
+
+    <div class="tags">
+      <span>Data Analysis</span>
+      <span>Business Intelligence</span>
+      <span>SQL</span>
+      <span>R</span>
+      <span>Power BI</span>
+      <span>Web</span>
+    </div>
+  </section>
+
+  <!-- COMPETENCES -->
+  <section class="card">
+    <h2>Compétences</h2>
+
+    <div class="grid">
+      <div>
+        <h3>Data & Analyse</h3>
+        <div class="tags">
+          <span>R</span>
+          <span>Excel</span>
+          <span>Power BI</span>
+          <span>Statistiques</span>
+        </div>
+      </div>
+
+      <div>
+        <h3>Informatique & Web</h3>
+        <div class="tags">
+          <span>SQL</span>
+          <span>Java</span>
+          <span>PHP</span>
+          <span>JavaScript</span>
+          <span>HTML / CSS</span>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- PROJETS -->
   <section class="card">
     <h2>Projets</h2>
 
-    <!-- COMPOSANT DATA -->
-    <h3>Projet Data / Analyse</h3>
-
     <div class="item">
       <strong>Analyse des troubles électrocardiographiques chez les patients AVC</strong>
       <p class="muted">
-        Analyse de données cliniques réelles dans le cadre d’une étude au Centre Muraz
-        (Burkina Faso). Nettoyage, analyse statistique et interprétation des résultats
-        sous R et Excel.
+        Projet réalisé au Centre Muraz (Burkina Faso). Analyse statistique de
+        données cliniques afin d’étudier les anomalies ECG chez des patients AVC.
       </p>
       <p>
-        <a href="rapport_ecg_avc.pdf" target="_blank">📄 Télécharger le rapport</a>
-        &nbsp; | &nbsp;
-        <a href="https://github.com/MouhamaDiallo/analyse-ecg-avc" target="_blank">
-          🔗 GitHub (analyse & documentation)
+        📄 <a href="rapport_ecg_avc.pdf" target="_blank">
+          Télécharger le rapport (PDF)
+        </a>
+        &nbsp;|&nbsp;
+        🔗 <a href="https://github.com/MouhamaDiallo/analyse-ecg-avc" target="_blank">
+          Détails sur GitHub
         </a>
       </p>
     </div>
 
     <div class="item">
-      <strong>Prédiction des performances à la CAN — Power BI</strong>
+      <strong>Dashboard Power BI — Prédiction CAN</strong>
       <p class="muted">
-        Projet de data visualisation et d’analyse prédictive autour de la Coupe d’Afrique
-        des Nations. Création de tableaux de bord interactifs et indicateurs de performance.
-      </p>
-      <p>
-        <a href="https://github.com/MouhamaDiallo/can-powerbi" target="_blank">
-          🔗 GitHub (dataset & dashboards)
-        </a>
+        Analyse exploratoire et visualisation de données sportives avec Power BI.
       </p>
     </div>
-
-    <div class="sep"></div>
-
-    <!-- COMPOSANT WEB -->
-    <h3>Projet Développement Web</h3>
 
     <div class="item">
-      <strong>Application web avec backend SQL</strong>
+      <strong>Projet Web (SQL / PHP / JavaScript)</strong>
       <p class="muted">
-        Projet académique de développement web intégrant une interface utilisateur,
-        un backend applicatif et une base de données relationnelle (CRUD, requêtes SQL).
-      </p>
-      <p>
-        <a href="https://github.com/MouhamaDiallo/projet-web-sql" target="_blank">
-          🔗 GitHub (code & base de données)
-        </a>
+        Application web développée en groupe avec base de données et backend SQL.
       </p>
     </div>
-
-    <div class="sep"></div>
-
-    <!-- COMPOSANT GESTION -->
-    <h3>Projet Gestion & Organisation</h3>
-
-    <div class="item">
-      <strong>Projet de livraison — Gestion de projet avec Jira</strong>
-      <p class="muted">
-        Projet en groupe axé sur la planification, la coordination et le suivi
-        d’un projet de livraison à l’aide de l’outil Jira.
-      </p>
-      <p>
-        <a href="https://github.com/MouhamaDiallo/projet-livraison-jira" target="_blank">
-          🔗 Documentation du projet
-        </a>
-      </p>
-    </div>
-
   </section>
 
-  <!-- CERTIFICATIONS -->
+  <!-- CERTIFICATS -->
   <section class="card">
-    <h2>Certifications (sélection)</h2>
+    <h2>Certifications</h2>
 
-    <div class="grid">
-
-      <div class="item">
-        <strong>Introduction to Artificial Intelligence — IBM</strong>
-        <p class="muted">
-          Fondamentaux de l’intelligence artificielle : concepts clés, cas d’usage
-          et enjeux éthiques.
-        </p>
-        <a href="https://www.credly.com/" target="_blank">
-          🏅 Badge Credly
+    <div class="item">
+      <strong>Artificial Intelligence Essentials V2 — IBM</strong>
+      <p class="muted">
+        Certification IBM validant les bases essentielles de l’intelligence
+        artificielle : concepts, usages, enjeux et impacts professionnels.
+      </p>
+      <p>
+        📄 <a href="certificats/certificat_ai_essentials_v2_ibm.pdf" target="_blank">
+          Télécharger le certificat (PDF)
         </a>
-      </div>
-
-      <div class="item">
-        <strong>Artificial Intelligence Essentials V2 — IBM</strong>
-        <p class="muted">
-          Approfondissement des notions essentielles en IA et compréhension
-          des applications en entreprise.
-        </p>
-        <a href="https://www.credly.com/" target="_blank">
-          🏅 Badge Credly
+        &nbsp;|&nbsp;
+        🔗 <a href="https://www.credly.com/badges/dc332ffd-46cc-46a9-abf1-44a83e38717a" target="_blank">
+          Badge Credly
         </a>
-      </div>
-
+      </p>
     </div>
 
-    <p class="muted" style="margin-top:12px;">
-      D’autres certifications (Data, Python, Web, Management) sont disponibles sur mon GitHub.
-    </p>
+    <div class="item">
+      <strong>Introduction to Artificial Intelligence — IBM (Coursera)</strong>
+      <p class="muted">
+        Formation d’introduction à l’IA couvrant les principes fondamentaux,
+        le machine learning et les applications concrètes.
+      </p>
+      <p>
+        📄 <a href="certificats/certificat_intro_ai_ibm_coursera.pdf" target="_blank">
+          Télécharger le certificat (PDF)
+        </a>
+        &nbsp;|&nbsp;
+        🔗 <a href="https://coursera.org/verify/BFXD73LKE3JF" target="_blank">
+          Vérification Coursera
+        </a>
+      </p>
+    </div>
   </section>
 
   <!-- CONTACT -->
@@ -174,8 +257,9 @@
 
 </div>
 
-<footer>© 2026 — Diallo Mouhamad</footer>
+<footer>
+  © 2026 — Diallo Mouhamad
+</footer>
 
 </body>
-</html>
-    
+  </html>
