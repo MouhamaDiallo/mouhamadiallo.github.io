@@ -2,145 +2,226 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Mouhamad Diallo | Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f5f6fa;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-        header {
-            background: #1e272e;
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
-        }
-        section {
-            max-width: 1000px;
-            margin: 30px auto;
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-        }
-        h2 {
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-        }
-        .project {
-            margin-top: 25px;
-        }
-        .project img {
-            max-width: 100%;
-            border-radius: 6px;
-            margin: 15px 0;
-        }
-        a {
-            color: #0066cc;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .btn {
-            display: inline-block;
-            margin-top: 10px;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #777;
-        }
-    </style>
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mouhamad Diallo — Portfolio</title>
+  <style>
+    body{font-family:Arial,sans-serif;margin:0;background:#f3f4f6;color:#111827;line-height:1.6}
+    header{background:#111827;color:#fff;padding:52px 18px}
+    .wrap{max-width:980px;margin:0 auto;padding:18px}
+    .topline{opacity:.9;margin-top:6px}
+    .btn{display:inline-block;background:#2563eb;color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;margin-top:10px;margin-right:10px}
+    .btn:hover{opacity:.95}
+    .btn.secondary{background:#0f766e}
+    .btn.gray{background:#374151}
 
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    @media(max-width:760px){.grid{grid-template-columns:1fr}}
+
+    .card{background:#fff;border-radius:14px;padding:18px;margin:14px 0;box-shadow:0 1px 10px rgba(0,0,0,.06)}
+    h1{margin:0;font-size:32px}
+    h2{margin:0 0 12px 0;font-size:18px;color:#111827}
+    h3{margin:14px 0 6px 0;font-size:15px;color:#111827}
+    .muted{color:#6b7280}
+    .tags span{display:inline-block;background:#eef2ff;border-radius:999px;padding:6px 10px;margin:6px 6px 0 0;font-size:13px}
+    ul{margin:8px 0 0 18px}
+    li{margin:6px 0}
+    .item{border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-top:10px}
+    a{color:#2563eb;text-decoration:none}
+    a:hover{text-decoration:underline}
+    footer{text-align:center;color:#6b7280;padding:18px}
+    .sep{height:1px;background:#e5e7eb;margin:12px 0}
+
+    .project-img{
+      width:100%;
+      max-height:420px;
+      object-fit:cover;
+      border-radius:12px;
+      border:1px solid #e5e7eb;
+      margin-top:10px;
+    }
+    .meta-line{margin-top:8px}
+    .meta-line strong{color:#111827}
+    .small{font-size:13px}
+  </style>
+</head>
 <body>
 
 <header>
+  <div class="wrap">
     <h1>Mouhamad Diallo</h1>
-    <p>M1 MIAGE | Data • Informatique • Analyse & Visualisation</p>
+    <div class="topline">M1 MIAGE — Data & Informatique de gestion (Marseille)</div>
+    <p style="max-width:850px;margin:14px 0 0 0;">
+      Profil orienté <strong>Data/BI</strong>, <strong>développement web</strong> et <strong>gestion de projets</strong>.
+      Je construis des projets concrets (analyses, dashboards, applications) et je documente tout sur GitHub.
+    </p>
+
+    <div style="margin-top:14px;">
+      <a class="btn" href="mailto:mouhamadiallo99@gmail.com">Me contacter</a>
+      <a class="btn gray" href="https://github.com/MouhamaDiallo" target="_blank">Mon GitHub</a>
+    </div>
+  </div>
 </header>
 
-<section>
-    <h2>Profil</h2>
-    <p>
-        Étudiant en Master MIAGE, je développe une double compétence en 
-        <strong>analyse de données</strong> et <strong>informatique</strong>.
-        Je m’intéresse particulièrement à la visualisation, à l’aide à la décision
-        et aux projets concrets orientés données.
+<div class="wrap">
+
+  <!-- DESCRIPTION -->
+  <section class="card" id="description">
+    <h2>Description</h2>
+    <p class="muted" style="margin-top:0;">
+      Étudiant en MIAGE avec une double compétence : analyse de données (R, Excel, Power BI) et systèmes d’information (SQL, UML, dev).
+      Je recherche des missions/projets où je peux transformer des données en décisions, et livrer des solutions propres et documentées.
     </p>
-</section>
+    <div class="tags">
+      <span>Data / BI</span>
+      <span>Power BI</span>
+      <span>SQL</span>
+      <span>R</span>
+      <span>Web (PHP/JS)</span>
+      <span>Gestion de projet</span>
+    </div>
+  </section>
 
-<section>
-    <h2>Projets Data</h2>
+  <!-- COMPETENCES -->
+  <section class="card" id="competences">
+    <h2>Compétences</h2>
 
-    <!-- PROJET CAN 2025 -->
-    <div class="project">
-        <h3>CAN 2025 (Maroc) — Projection analytique & Power BI</h3>
+    <div class="grid">
+      <div>
+        <h3>Data & Analyse</h3>
+        <div class="tags">
+          <span>R</span><span>Excel</span><span>SPSS</span><span>Stata</span><span>SAS</span>
+        </div>
 
-        <img src="https://mouhamadiallo.github.io/can-2025-powerbi-projection/images/prevision_can.png"
-             alt="Prévision CAN 2025 Power BI">
+        <h3 style="margin-top:12px;">BI & Visualisation</h3>
+        <div class="tags">
+          <span>Power BI</span>
+        </div>
+      </div>
 
-        <p>
-            Projet d’analyse et de projection des performances des sélections africaines
-            pour la <strong>CAN 2025 au Maroc</strong>.
-            J’ai conçu une base de données dédiée et construit un
-            <strong>score analytique</strong> intégrant :
-        </p>
-        <ul>
-            <li>historique des performances sur plusieurs CAN</li>
-            <li>classement FIFA</li>
-            <li>forme récente et dynamique</li>
-            <li>avantage du pays hôte</li>
-        </ul>
-        <p>
-            Les résultats sont présentés sous forme de <strong>tableau de bord Power BI</strong>
-            avec projections par pays et par zones géographiques.
-        </p>
+      <div>
+        <h3>Bases de données & Modélisation</h3>
+        <div class="tags">
+          <span>SQL</span><span>UML</span><span>MERISE</span>
+        </div>
 
-        <a class="btn"
-           href="https://github.com/MouhamaDiallo/can-2025-powerbi-projection"
-           target="_blank">
-            👉 Voir les détails (code, données, Power BI)
-        </a>
+        <h3 style="margin-top:12px;">Programmation & Web</h3>
+        <div class="tags">
+          <span>Java</span><span>PHP</span><span>JavaScript</span><span>HTML/CSS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETS -->
+  <section class="card" id="projets">
+    <h2>Projets</h2>
+
+    <!-- 1) DATA -->
+    <h3>1) Projets Data</h3>
+
+    <!-- CAN 2025 -->
+    <div class="item">
+      <strong>CAN 2025 (Maroc) — Projection analytique (Power BI)</strong>
+      <p class="muted" style="margin:6px 0 0 0;">
+        Dashboard Power BI basé sur une base de données construite pour analyser les performances des nations africaines
+        et produire une projection (score analytique) par pays et par zone.
+      </p>
+
+      <!-- IMPORTANT : mets l'image dans ton repo portfolio: assets/can25/prevision_can.png -->
+      <img class="project-img" src="assets/can25/prevision_can.png" alt="Prévision CAN 2025 - Power BI">
+
+      <div class="meta-line small muted">
+        <strong>Contenu GitHub :</strong> image (prevision_can.png), données (can.txt), fichier Power BI (can2025.pbix) + explications.
+      </div>
+
+      <p style="margin:10px 0 0 0;">
+        <a class="btn" href="https://github.com/MouhamaDiallo/can-2025-powerbi-projection" target="_blank">Plus de détails (GitHub)</a>
+        <!-- Si tu ajoutes une vidéo plus tard (mp4) dans ce repo portfolio, tu pourras activer ça :
+        <a class="btn secondary" href="assets/can25/demo_can2025.mp4" target="_blank">Voir la démo (vidéo)</a>
+        -->
+      </p>
     </div>
 
-    <!-- PROJET AVC -->
-    <div class="project">
-        <h3>Analyse des troubles électrocardiographiques chez les patients AVC</h3>
-        <p>
-            Projet académique réalisé au Centre Muraz (Burkina Faso),
-            portant sur l’analyse statistique de données cliniques
-            afin d’étudier les anomalies ECG chez les patients victimes d’AVC.
-        </p>
-        <a class="btn" href="rapport_ecg_avc.pdf" target="_blank">
-            📄 Télécharger le rapport (PDF)
-        </a>
+    <!-- AVC -->
+    <div class="item">
+      <strong>Analyse ECG chez les patients AVC (R / Excel) — Centre Muraz (Burkina Faso)</strong>
+      <p class="muted" style="margin:6px 0 0 0;">
+        Analyse statistique de données cliniques pour étudier les troubles électrocardiographiques (ECG) chez les patients AVC.
+        Rapport complet disponible en PDF.
+      </p>
+      <p style="margin:10px 0 0 0;">
+        <a class="btn secondary" href="rapport_ecg_avc.pdf" target="_blank">Télécharger le rapport (PDF)</a>
+        <a class="btn" href="https://github.com/MouhamaDiallo/analyse-ecg-avc" target="_blank">Plus de détails (GitHub)</a>
+      </p>
     </div>
 
-</section>
+    <div class="sep"></div>
 
-<section>
+    <!-- 2) WEB -->
+    <h3>2) Projets Web</h3>
+
+    <div class="item">
+      <strong>Site web (cours) — Front + SQL (backend)</strong>
+      <p class="muted" style="margin:6px 0 0 0;">
+        Projet réalisé en cours : pages web + interactions, connexion à une base SQL côté serveur.
+        (Repo et démo à ajouter dès que tu upload le code.)
+      </p>
+      <p style="margin:10px 0 0 0;">
+        <a class="btn" href="#" onclick="return false;">Lien GitHub (à ajouter)</a>
+      </p>
+    </div>
+
+    <div class="sep"></div>
+
+    <!-- 3) GESTION DE PROJET -->
+    <h3>3) Gestion de projet</h3>
+
+    <div class="item">
+      <strong>Projet de livraison (Jira) — Travail en groupe</strong>
+      <p class="muted" style="margin:6px 0 0 0;">
+        Organisation du projet sur Jira : backlog, user stories, répartition des tâches, suivi d’avancement et livrables.
+        (Ajout du repo / captures / documents dès que tu les upload.)
+      </p>
+      <p style="margin:10px 0 0 0;">
+        <a class="btn" href="#" onclick="return false;">Lien GitHub (à ajouter)</a>
+      </p>
+    </div>
+
+  </section>
+
+  <!-- CERTIFICATS -->
+  <section class="card" id="certificats">
     <h2>Certifications</h2>
-    <ul>
-        <li>
-            Artificial Intelligence Essentials V2 — IBM  
-            <a href="certificats/certificat_ai_v2_ibm.pdf" target="_blank">📄 PDF</a>
-        </li>
-        <li>
-            Introduction to Artificial Intelligence (AI) — IBM  
-            <a href="certificats/certificat_ai_intro_ibm.pdf" target="_blank">📄 PDF</a>
-        </li>
-    </ul>
-</section>
 
-<footer>
-    © 2026 — Mouhamad Diallo | Portfolio GitHub Pages
-</footer>
+    <div class="item">
+      <strong>Artificial Intelligence Essentials V2 — IBM</strong>
+      <div class="muted">Déc. 2025</div>
+      <p style="margin:10px 0 0 0;">
+        <a class="btn secondary" href="certificats/certificat_ai_v2_ibm.pdf" target="_blank">Télécharger (PDF)</a>
+      </p>
+    </div>
+
+    <div class="item">
+      <strong>Introduction to Artificial Intelligence (AI) — IBM</strong>
+      <div class="muted">Déc. 2025</div>
+      <p style="margin:10px 0 0 0;">
+        <a class="btn secondary" href="certificats/certificat_ai_intro_ibm.pdf" target="_blank">Télécharger (PDF)</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="card" id="contact">
+    <h2>Contact</h2>
+    <p>Email : <a href="mailto:mouhamadiallo99@gmail.com">mouhamadiallo99@gmail.com</a></p>
+    <p>Tél : +33 7 44 25 75 15</p>
+    <p>GitHub : <a href="https://github.com/MouhamaDiallo" target="_blank">github.com/MouhamaDiallo</a></p>
+  </section>
+
+</div>
+
+<footer>© 2026 — Mouhamad Diallo</footer>
 
 </body>
-</html>
+            </html>
