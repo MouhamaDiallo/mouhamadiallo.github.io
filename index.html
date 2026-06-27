@@ -1,227 +1,541 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mouhamad Diallo — Portfolio</title>
+  <title>Mouhamad Diallo — Data & Gestion de projet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   <style>
-    body{font-family:Arial,sans-serif;margin:0;background:#f3f4f6;color:#111827;line-height:1.6}
-    header{background:#111827;color:#fff;padding:52px 18px}
-    .wrap{max-width:980px;margin:0 auto;padding:18px}
-    .topline{opacity:.9;margin-top:6px}
-    .btn{display:inline-block;background:#2563eb;color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;margin-top:10px;margin-right:10px}
-    .btn:hover{opacity:.95}
-    .btn.secondary{background:#0f766e}
-    .btn.gray{background:#374151}
-
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    @media(max-width:760px){.grid{grid-template-columns:1fr}}
-
-    .card{background:#fff;border-radius:14px;padding:18px;margin:14px 0;box-shadow:0 1px 10px rgba(0,0,0,.06)}
-    h1{margin:0;font-size:32px}
-    h2{margin:0 0 12px 0;font-size:18px;color:#111827}
-    h3{margin:14px 0 6px 0;font-size:15px;color:#111827}
-    .muted{color:#6b7280}
-    .tags span{display:inline-block;background:#eef2ff;border-radius:999px;padding:6px 10px;margin:6px 6px 0 0;font-size:13px}
-    ul{margin:8px 0 0 18px}
-    li{margin:6px 0}
-    .item{border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-top:10px}
-    a{color:#2563eb;text-decoration:none}
-    a:hover{text-decoration:underline}
-    footer{text-align:center;color:#6b7280;padding:18px}
-    .sep{height:1px;background:#e5e7eb;margin:12px 0}
-
-    .project-img{
-      width:100%;
-      max-height:420px;
-      object-fit:cover;
-      border-radius:12px;
-      border:1px solid #e5e7eb;
-      margin-top:10px;
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --border: #2a2d3a;
+      --accent: #f97316;
+      --accent2: #3b82f6;
+      --text: #e8eaf0;
+      --muted: #8b8fa8;
+      --tag-bg: #1e2235;
     }
-    .meta-line{margin-top:8px}
-    .meta-line strong{color:#111827}
-    .small{font-size:13px}
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a { color: var(--accent2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── HEADER ── */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 64px 24px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 340px; height: 340px;
+      background: radial-gradient(circle, rgba(249,115,22,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .wrap { max-width: 900px; margin: 0 auto; }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(36px, 6vw, 58px);
+      font-weight: 800;
+      line-height: 1.1;
+      color: #fff;
+    }
+    .subtitle {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 620px;
+    }
+    .subtitle strong { color: var(--text); }
+
+    .cta-row { margin-top: 28px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: opacity .15s;
+    }
+    .btn:hover { opacity: .85; text-decoration: none; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-ghost { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(15,17,23,.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
+    nav ul { max-width: 900px; margin: 0 auto; list-style: none; display: flex; gap: 0; }
+    nav li a {
+      display: block;
+      padding: 14px 16px;
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 500;
+      transition: color .15s;
+    }
+    nav li a:hover { color: var(--text); text-decoration: none; }
+
+    /* ── SECTIONS ── */
+    section { padding: 56px 24px; border-bottom: 1px solid var(--border); }
+    .section-label {
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    h2 { font-family: 'Syne', sans-serif; font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 20px; }
+
+    /* ── SKILLS GRID ── */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+    .skill-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+    }
+    .skill-block h3 { font-size: 13px; color: var(--muted); margin-bottom: 12px; font-weight: 500; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: var(--tag-bg);
+      color: var(--text);
+      font-size: 12px;
+      padding: 5px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    /* ── EXPERIENCE ── */
+    .xp-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 20px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .xp-item:last-child { border-bottom: none; }
+    .xp-date { font-size: 12px; color: var(--muted); padding-top: 3px; }
+    .xp-title { font-weight: 600; color: #fff; font-size: 15px; }
+    .xp-org { color: var(--accent); font-size: 13px; margin: 3px 0 8px; }
+    .xp-desc { font-size: 14px; color: var(--muted); }
+    .xp-desc ul { margin: 8px 0 0 16px; }
+    .xp-desc li { margin-bottom: 4px; }
+
+    /* ── PROJECTS ── */
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+      transition: border-color .2s;
+    }
+    .project-card:hover { border-color: var(--accent); }
+    .project-tag {
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .project-card h3 { font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 8px; }
+    .project-card p { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+    .project-links { display: flex; gap: 8px; flex-wrap: wrap; }
+    .project-links a {
+      font-size: 12px;
+      padding: 5px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: var(--tag-bg);
+      transition: border-color .15s;
+    }
+    .project-links a:hover { border-color: var(--accent2); text-decoration: none; }
+
+    /* ── CERTIFICATIONS ── */
+    .cert-list { display: flex; flex-direction: column; gap: 10px; }
+    .cert-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .cert-name { font-size: 14px; font-weight: 500; color: #fff; }
+    .cert-meta { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .cert-link {
+      font-size: 12px;
+      color: var(--accent2);
+      white-space: nowrap;
+    }
+
+    /* ── CONTACT ── */
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .contact-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .contact-item .label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 6px; }
+    .contact-item a, .contact-item span { font-size: 14px; color: var(--text); }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 32px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 600px) {
+      .xp-item { grid-template-columns: 1fr; gap: 4px; }
+      .xp-date { font-size: 11px; }
+    }
   </style>
 </head>
 <body>
 
 <header>
   <div class="wrap">
-    <h1>Mouhamad Diallo</h1>
-    <div class="topline">M1 MIAGE — Data & Informatique de gestion (Marseille)</div>
-    <p style="max-width:850px;margin:14px 0 0 0;">
-      Profil orienté <strong>Data/BI</strong>, <strong>développement web</strong> et <strong>gestion de projets</strong>.
-      Je construis des projets concrets (analyses, dashboards, applications) et je documente tout sur GitHub.
+    <div class="eyebrow">Portfolio — M1 MIAGE · Aix-Marseille Université</div>
+    <h1>Mouhamad<br>Diallo</h1>
+    <p class="subtitle">
+      <strong>Data Analyst · Gestion de projet · Développement web</strong><br>
+      Je transforme des données en décisions et je livre des solutions propres et documentées.
+      Disponible en alternance à partir de septembre 2026.
     </p>
-
-    <div style="margin-top:14px;">
-      <a class="btn" href="mailto:mouhamadiallo99@gmail.com">Me contacter</a>
-      <a class="btn gray" href="https://github.com/MouhamaDiallo" target="_blank">Mon GitHub</a>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="mailto:mouhamadiallo99@gmail.com">Me contacter</a>
+      <a class="btn btn-ghost" href="https://github.com/MouhamaDiallo" target="_blank">GitHub</a>
+      <a class="btn btn-ghost" href="DIALLO_MOUHAMAD_ALTERNANCE.pdf" target="_blank">Télécharger le CV</a>
     </div>
   </div>
 </header>
 
+<nav>
+  <ul>
+    <li><a href="#competences">Compétences</a></li>
+    <li><a href="#experience">Expériences</a></li>
+    <li><a href="#projets">Projets</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
 <div class="wrap">
 
-  <!-- DESCRIPTION -->
-  <section class="card" id="description">
-    <h2>Description</h2>
-    <p class="muted" style="margin-top:0;">
-      Étudiant en MIAGE avec une double compétence : analyse de données (R, Excel, Power BI) et systèmes d’information (SQL, UML, dev).
-      Je recherche des missions/projets où je peux transformer des données en décisions, et livrer des solutions propres et documentées.
-    </p>
-    <div class="tags">
-      <span>Data / BI</span>
-      <span>Power BI</span>
-      <span>SQL</span>
-      <span>R</span>
-      <span>Web (PHP/JS)</span>
-      <span>Gestion de projet</span>
+  <!-- COMPETENCES -->
+  <section id="competences">
+    <div class="section-label">Compétences</div>
+    <h2>Stack technique</h2>
+    <div class="skills-grid">
+      <div class="skill-block">
+        <h3>Data & Analyse</h3>
+        <div class="tags">
+          <span class="tag">R</span>
+          <span class="tag">Python</span>
+          <span class="tag">Excel</span>
+          <span class="tag">SPSS</span>
+          <span class="tag">Stata</span>
+          <span class="tag">SAS</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <h3>BI & Visualisation</h3>
+        <div class="tags">
+          <span class="tag">Power BI</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <h3>Bases de données</h3>
+        <div class="tags">
+          <span class="tag">SQL</span>
+          <span class="tag">T-SQL</span>
+          <span class="tag">MERISE</span>
+          <span class="tag">UML</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <h3>Développement web</h3>
+        <div class="tags">
+          <span class="tag">Java</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">PHP</span>
+          <span class="tag">HTML/CSS</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <h3>Gestion de projet</h3>
+        <div class="tags">
+          <span class="tag">Agile / Scrum</span>
+          <span class="tag">Jira</span>
+          <span class="tag">Product Owner</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <h3>Modélisation</h3>
+        <div class="tags">
+          <span class="tag">UML</span>
+          <span class="tag">BPMN</span>
+          <span class="tag">XML</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- COMPETENCES -->
-  <section class="card" id="competences">
-    <h2>Compétences</h2>
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-label">Parcours</div>
+    <h2>Expériences & Formation</h2>
 
-    <div class="grid">
+    <div class="xp-item">
+      <div class="xp-date">2025 — 2026</div>
       <div>
-        <h3>Data & Analyse</h3>
-        <div class="tags">
-          <span>R</span><span>Excel</span><span>SPSS</span><span>Stata</span><span>SAS</span>
-        </div>
-
-        <h3 style="margin-top:12px;">BI & Visualisation</h3>
-        <div class="tags">
-          <span>Power BI</span>
-        </div>
-      </div>
-
-      <div>
-        <h3>Bases de données & Modélisation</h3>
-        <div class="tags">
-          <span>SQL</span><span>UML</span><span>MERISE</span>
-        </div>
-
-        <h3 style="margin-top:12px;">Programmation & Web</h3>
-        <div class="tags">
-          <span>Java</span><span>PHP</span><span>JavaScript</span><span>HTML/CSS</span>
+        <div class="xp-title">Stagiaire Chef de Projet Web</div>
+        <div class="xp-org">OPALION — Strasbourg</div>
+        <div class="xp-desc">
+          Développement solo de MIT4Bizness, plateforme web connectant porteurs de projets et investisseurs africains.
+          <ul>
+            <li>Stack : Angular 17, Spring Boot (Java 17), PostgreSQL, déployé sur Railway</li>
+            <li>Pilotage des itérations BDD, coordination des livrables, documentation technique</li>
+          </ul>
         </div>
       </div>
     </div>
+
+    <div class="xp-item">
+      <div class="xp-date">Avr. — Mai 2024</div>
+      <div>
+        <div class="xp-title">Stagiaire Data Analyst</div>
+        <div class="xp-org">Université d'Aix-Marseille</div>
+        <div class="xp-desc">
+          Analyse des discriminations salariales en France (R) — exploitation de données socio-économiques publiques.
+        </div>
+      </div>
+    </div>
+
+    <div class="xp-item">
+      <div class="xp-date">Nov. 2023 — Fév. 2024</div>
+      <div>
+        <div class="xp-title">Assistant Data Analyst</div>
+        <div class="xp-org">IRSS — Burkina Faso</div>
+        <div class="xp-desc">
+          Projet de recherche en santé publique sur la malnutrition infantile — collecte et traitement de données terrain.
+        </div>
+      </div>
+    </div>
+
+    <div class="xp-item">
+      <div class="xp-date">Nov. 2022 — Mai 2023</div>
+      <div>
+        <div class="xp-title">Chargé d'analyse de données</div>
+        <div class="xp-org">Centre Muraz — Bobo-Dioulasso</div>
+        <div class="xp-desc">
+          Analyse des troubles ECG chez des patients AVC au CHUSS — régression logistique, ACM, CAH sous R et SPSS.
+        </div>
+      </div>
+    </div>
+
+    <div class="xp-item">
+      <div class="xp-date">2024 — 2025</div>
+      <div>
+        <div class="xp-title">Licence MIASHS — Statistique & Informatique</div>
+        <div class="xp-org">Université d'Aix-Marseille</div>
+      </div>
+    </div>
+
+    <div class="xp-item">
+      <div class="xp-date">2023</div>
+      <div>
+        <div class="xp-title">Licence Statistique Informatique</div>
+        <div class="xp-org">Université Nazi Boni — Burkina Faso</div>
+      </div>
+    </div>
+
   </section>
 
   <!-- PROJETS -->
-  <section class="card" id="projets">
-    <h2>Projets</h2>
+  <section id="projets">
+    <div class="section-label">Projets</div>
+    <h2>Réalisations</h2>
+    <div class="projects-grid">
 
-    <!-- 1) DATA -->
-    <h3>1) Projets Data</h3>
-
-    <!-- CAN 2025 -->
-    <div class="item">
-      <strong>CAN 2025 (Maroc) — Projection analytique (Power BI)</strong>
-      <p class="muted" style="margin:6px 0 0 0;">
-        Dashboard Power BI basé sur une base de données construite pour analyser les performances des nations africaines
-        et produire une projection (score analytique) par pays et par zone.
-      </p>
-
-      <!-- IMPORTANT : mets l'image dans ton repo portfolio: assets/can25/prevision_can.png -->
-      <img class="project-img" src="assets/can25/prevision_can.png" alt="Prévision CAN 2025 - Power BI">
-
-      <div class="meta-line small muted">
-        <strong>Contenu GitHub :</strong> image (prevision_can.png), données (can.txt), fichier Power BI (can2025.pbix) + explications.
+      <div class="project-card">
+        <div class="project-tag">Machine Learning · Python</div>
+        <h3>DataBuilder Africa — Prédiction des coupures de courant</h3>
+        <p>Modèle Random Forest (72.6%) entraîné sur 8 784h de données NASA POWER pour prédire le risque de coupure à Ouagadougou. Déployé sur Hugging Face Spaces.</p>
+        <div class="project-links">
+          <a href="https://huggingface.co/spaces/yeroyordan/databuilder-africa" target="_blank">Demo</a>
+          <a href="https://github.com/MouhamaDiallo/databuilder-africa" target="_blank">GitHub</a>
+        </div>
       </div>
 
-      <p style="margin:10px 0 0 0;">
-        <a class="btn" href="https://github.com/MouhamaDiallo/can-2025-powerbi-projection" target="_blank">Plus de détails (GitHub)</a>
-        <!-- Si tu ajoutes une vidéo plus tard (mp4) dans ce repo portfolio, tu pourras activer ça :
-        <a class="btn secondary" href="assets/can25/demo_can2025.mp4" target="_blank">Voir la démo (vidéo)</a>
-        -->
-      </p>
+      <div class="project-card">
+        <div class="project-tag">Power BI · Sports Analytics</div>
+        <h3>CAN 2025 — Projection analytique</h3>
+        <p>Dashboard Power BI prédit le Top 6 exact de la CAN 2025 dès la première journée. Score composite basé sur classement FIFA, historique et résultats J1.</p>
+        <div class="project-links">
+          <a href="https://github.com/MouhamaDiallo/can-2025-powerbi-projection" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-tag">R · Statistiques médicales</div>
+        <h3>Analyse ECG chez les patients AVC</h3>
+        <p>Etude clinique sur 196 patients au CHUSS de Bobo-Dioulasso. Régression logistique, ACM et classification ascendante hiérarchique sous R.</p>
+        <div class="project-links">
+          <a href="rapport_ecg_avc.pdf" target="_blank">Rapport PDF</a>
+          <a href="https://github.com/MouhamaDiallo/analyse-ecg-avc" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-tag">Angular · Spring Boot · PostgreSQL</div>
+        <h3>MIT4Bizness — Plateforme investissement</h3>
+        <p>Application web full-stack connectant porteurs de projets africains et investisseurs diaspora. Développé en solo lors du stage OPALION.</p>
+        <div class="project-links">
+          <a href="https://github.com/MouhamaDiallo" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-tag">R · Santé publique</div>
+        <h3>SAIN — Analyse drone & infrastructures santé</h3>
+        <p>Répartition des infrastructures de santé au Burkina Faso et proposition d'une solution logistique par drones.</p>
+        <div class="project-links">
+          <a href="https://github.com/MouhamaDiallo/SAIN-Drone-Health-Burkina" target="_blank">GitHub</a>
+        </div>
+      </div>
+
     </div>
-
-    <!-- AVC -->
-    <div class="item">
-      <strong>Analyse ECG chez les patients AVC (R / Excel) — Centre Muraz (Burkina Faso)</strong>
-      <p class="muted" style="margin:6px 0 0 0;">
-        Analyse statistique de données cliniques pour étudier les troubles électrocardiographiques (ECG) chez les patients AVC.
-        Rapport complet disponible en PDF.
-      </p>
-      <p style="margin:10px 0 0 0;">
-        <a class="btn secondary" href="rapport_ecg_avc.pdf" target="_blank">Télécharger le rapport (PDF)</a>
-        <a class="btn" href="https://github.com/MouhamaDiallo/analyse-ecg-avc" target="_blank">Plus de détails (GitHub)</a>
-      </p>
-    </div>
-
-    <div class="sep"></div>
-
-    <!-- 2) WEB -->
-    <h3>2) Projets Web</h3>
-
-    <div class="item">
-      <strong>Site web (cours) — Front + SQL (backend)</strong>
-      <p class="muted" style="margin:6px 0 0 0;">
-        Projet réalisé en cours : pages web + interactions, connexion à une base SQL côté serveur.
-        (Repo et démo à ajouter dès que tu upload le code.)
-      </p>
-      <p style="margin:10px 0 0 0;">
-        <a class="btn" href="#" onclick="return false;">Lien GitHub (à ajouter)</a>
-      </p>
-    </div>
-
-    <div class="sep"></div>
-
-    <!-- 3) GESTION DE PROJET -->
-    <h3>3) Gestion de projet</h3>
-
-    <div class="item">
-      <strong>Projet de livraison (Jira) — Travail en groupe</strong>
-      <p class="muted" style="margin:6px 0 0 0;">
-        Organisation du projet sur Jira : backlog, user stories, répartition des tâches, suivi d’avancement et livrables.
-        (Ajout du repo / captures / documents dès que tu les upload.)
-      </p>
-      <p style="margin:10px 0 0 0;">
-        <a class="btn" href="#" onclick="return false;">Lien GitHub (à ajouter)</a>
-      </p>
-    </div>
-
   </section>
 
-  <!-- CERTIFICATS -->
-  <section class="card" id="certificats">
-    <h2>Certifications</h2>
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <div class="section-label">Certifications</div>
+    <h2>Formations complémentaires</h2>
+    <div class="cert-list">
 
-    <div class="item">
-      <strong>Artificial Intelligence Essentials V2 — IBM</strong>
-      <div class="muted">Déc. 2025</div>
-      <p style="margin:10px 0 0 0;">
-        <a class="btn secondary" href="certificats/certificat_ai_v2_ibm.pdf" target="_blank">Télécharger (PDF)</a>
-      </p>
-    </div>
+      <div class="cert-item">
+        <div>
+          <div class="cert-name">Crash Course on Python</div>
+          <div class="cert-meta">Google · Coursera · Janvier 2026</div>
+        </div>
+        <a class="cert-link" href="https://coursera.org/verify/XU5KFZZSBNQY" target="_blank">Vérifier</a>
+      </div>
 
-    <div class="item">
-      <strong>Introduction to Artificial Intelligence (AI) — IBM</strong>
-      <div class="muted">Déc. 2025</div>
-      <p style="margin:10px 0 0 0;">
-        <a class="btn secondary" href="certificats/certificat_ai_intro_ibm.pdf" target="_blank">Télécharger (PDF)</a>
-      </p>
+      <div class="cert-item">
+        <div>
+          <div class="cert-name">Generative AI: Prompt Engineering Basics</div>
+          <div class="cert-meta">IBM · Coursera · Mars 2026</div>
+        </div>
+        <a class="cert-link" href="https://coursera.org/verify/BYYLY16VFO8U" target="_blank">Vérifier</a>
+      </div>
+
+      <div class="cert-item">
+        <div>
+          <div class="cert-name">Generative AI: Introduction and Applications</div>
+          <div class="cert-meta">IBM · Coursera · Février 2026</div>
+        </div>
+        <a class="cert-link" href="https://coursera.org/verify/37XBI7VAT0UF" target="_blank">Vérifier</a>
+      </div>
+
+      <div class="cert-item">
+        <div>
+          <div class="cert-name">Introduction to Artificial Intelligence (AI)</div>
+          <div class="cert-meta">IBM · Coursera · Décembre 2025</div>
+        </div>
+        <a class="cert-link" href="https://coursera.org/verify/BFXD73LKE3JF" target="_blank">Vérifier</a>
+      </div>
+
+      <div class="cert-item">
+        <div>
+          <div class="cert-name">Google Data Analytics Capstone</div>
+          <div class="cert-meta">Google · Coursera · Décembre 2025</div>
+        </div>
+        <a class="cert-link" href="https://coursera.org/verify/HM6FZM2ORGIT" target="_blank">Vérifier</a>
+      </div>
+
+      <div class="cert-item">
+        <div>
+          <div class="cert-name">Agile Scrum Product Owner</div>
+          <div class="cert-meta">EXIN</div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section class="card" id="contact">
-    <h2>Contact</h2>
-    <p>Email : <a href="mailto:mouhamadiallo99@gmail.com">mouhamadiallo99@gmail.com</a></p>
-    <p>Tél : +33 7 44 25 75 15</p>
-    <p>GitHub : <a href="https://github.com/MouhamaDiallo" target="_blank">github.com/MouhamaDiallo</a></p>
+  <section id="contact">
+    <div class="section-label">Contact</div>
+    <h2>Me contacter</h2>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="label">Email</div>
+        <a href="mailto:mouhamadiallo99@gmail.com">mouhamadiallo99@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <div class="label">Téléphone</div>
+        <span>+33 7 44 25 75 15</span>
+      </div>
+      <div class="contact-item">
+        <div class="label">GitHub</div>
+        <a href="https://github.com/MouhamaDiallo" target="_blank">MouhamaDiallo</a>
+      </div>
+      <div class="contact-item">
+        <div class="label">LinkedIn</div>
+        <a href="https://linkedin.com/in/MouhamaDiallo" target="_blank">MouhamaDiallo</a>
+      </div>
+      <div class="contact-item">
+        <div class="label">Localisation</div>
+        <span>Marseille, France</span>
+      </div>
+      <div class="contact-item">
+        <div class="label">Disponibilité</div>
+        <span>Alternance sept. 2026</span>
+      </div>
+    </div>
   </section>
 
 </div>
 
-<footer>© 2026 — Mouhamad Diallo</footer>
+<footer>© 2026 — Mouhamad Diallo · M1 MIAGE · Aix-Marseille Université</footer>
 
 </body>
-            </html>
+</html>
